@@ -1,7 +1,7 @@
 // TwoColumnLayout.tsx
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import animatedImage from '../../assets/images/images.jpg'; // Replace with your animated image
+import animatedImage from '/assets/images/images.jpg'; // Replace with your animated image
 
 // Define the keyframes for the spring animation
 const springAnimation = keyframes`
@@ -49,7 +49,7 @@ const ImageColumn = styled.div`
   /* Animated image properties */
   &::before {
     content: '';
-    background-image: url(${animatedImage});
+    background-image: url('/assets/images/images.jpg');
     background-size: cover; /* Adjust to cover the entire area */
     background-position: center;
     position: absolute;
