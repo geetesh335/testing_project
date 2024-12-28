@@ -39,7 +39,7 @@ const Body: React.FC = () => {
   return (
     <VideoContainer>
       <BackgroundVideo ref={videoRef} autoPlay loop muted>
-        <source src='/assets/videos/chess_video.mp4' type="video/mp4" />
+        <source src={require('../../assets/videos/chess_video.mp4')} type="video/mp4" />
         Your browser does not support HTML5 video.
       </BackgroundVideo>
       <Content>
