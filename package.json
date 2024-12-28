@@ -2,7 +2,7 @@
   "name": "testing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://geetesh335.github.io/testing_project",
+  "homepage": "https://www.techashtra.com",
   "dependencies": {
     "@testing-library/react": "^16.1.0",
     "cra-template": "1.2.0",
