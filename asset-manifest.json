@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/testing_project/static/css/main.d7268de3.css",
-    "main.js": "/testing_project/static/js/main.6d421a98.js",
+    "main.js": "/testing_project/static/js/main.114f38f4.js",
+    "static/media/chess_video.mp4": "/testing_project/static/media/chess_video.cfa37fcc92cc91ea9cc2.mp4",
     "index.html": "/testing_project/index.html",
     "main.d7268de3.css.map": "/testing_project/static/css/main.d7268de3.css.map",
-    "main.6d421a98.js.map": "/testing_project/static/js/main.6d421a98.js.map"
+    "main.114f38f4.js.map": "/testing_project/static/js/main.114f38f4.js.map"
   },
   "entrypoints": [
     "static/css/main.d7268de3.css",
-    "static/js/main.6d421a98.js"
+    "static/js/main.114f38f4.js"
   ]
 }
