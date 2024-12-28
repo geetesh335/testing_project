@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/techashtra/static/css/main.d7268de3.css",
-    "main.js": "/techashtra/static/js/main.3193d666.js",
-    "index.html": "/techashtra/index.html",
-    "main.d7268de3.css.map": "/techashtra/static/css/main.d7268de3.css.map",
-    "main.3193d666.js.map": "/techashtra/static/js/main.3193d666.js.map"
+    "main.css": "/testing_project/static/css/main.d7268de3.css",
+    "main.js": "/testing_project/static/js/main.6d421a98.js",
+    "index.html": "/testing_project/index.html",
+    "main.d7268de3.css.map": "/testing_project/static/css/main.d7268de3.css.map",
+    "main.6d421a98.js.map": "/testing_project/static/js/main.6d421a98.js.map"
   },
   "entrypoints": [
     "static/css/main.d7268de3.css",
-    "static/js/main.3193d666.js"
+    "static/js/main.6d421a98.js"
   ]
 }
