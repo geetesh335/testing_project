@@ -1,20 +1,27 @@
-import './App.css';
-import React from 'react';
-import Body from './components/body/Body';
-import About from './components/about/About';
-import Footer from './components/footer/footer';
-import QualityCards from './components/qualityCards/QualityCard';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GlobalStyles from "./styles/GlobalStyles";
+import Header from "./components/header/Header";
+import Home from "./pages/home/Home";
+import Footer from "./components/footer/Footer";
+import Projects from "./components/projects/Projects";
+import Services from "./pages/services/Services";
 
-
-function App() {
+const App = () => {
   return (
-    <div className="App" >
-    <Body />
-     <About />
-    <QualityCards />
-   <Footer />
-    </div>
+    <Router>
+      <GlobalStyles />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<div>About Us</div>} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/projects" element={<Projects />} /> {/* Projects page */}
+        <Route path="/contact" element={<div>Contact Us</div>} />
+      </Routes>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;

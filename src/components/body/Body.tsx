@@ -1,52 +1,124 @@
-import React from 'react';
-import styled from 'styled-components';
-import Header from '../header/Header';
+import React, { useEffect, useState } from "react";
+import styled, { keyframes } from "styled-components";
 
-const VideoContainer = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden; /* Ensures that nothing overflows outside this container */
+// Letter animation keyframe definition
+const letterAnimation = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
-const BackgroundVideo = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the video covers the container */
-  z-index: -1; /* Video stays behind other content */
-`;
-
-const Content = styled.div`
-  position: relative; /* Keeps the content on top of the video */
-  z-index: 1; /* Ensures content is above the video */
-  color: white; /* Change text color as needed */
-  text-align: center; /* Center-align text */
-  padding: 20px; /* Add some padding */
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 `;
 
 const Body: React.FC = () => {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [animationClass, setAnimationClass] = useState<string>("");
 
-  React.useEffect(() => {
-    if (videoRef.current) {
-      // videoRef.current.playbackRate = 0.3; // Adjust playback speed
-    }
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimationClass("fade-in");
+    }, 100); // Delay before animation starts
   }, []);
 
   return (
-    <VideoContainer>
-      <BackgroundVideo ref={videoRef} autoPlay loop muted>
-        <source src={require('../../assets/videos/chess_video.mp4')} type="video/mp4" />
-        Your browser does not support HTML5 video.
-      </BackgroundVideo>
-      <Content>
-        <Header />
-      </Content>
-    </VideoContainer>
+    <HeroContainer>
+      <ContentWrapper className={animationClass}>
+        <Title>
+          <h1>Welcome to TechAshtra</h1>
+        </Title>
+        <Description>
+          <p>
+            Providing innovative and reliable TechAshtra for your business
+            needs.
+          </p>
+        </Description>
+      </ContentWrapper>
+    </HeroContainer>
   );
 };
 
 export default Body;
+
+const HeroContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #282c34;
+  color: #fff;
+  text-align: center;
+  padding: 0 2rem;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+`;
+
+const ContentWrapper = styled.div`
+  opacity: 0;
+  animation: ${fadeIn} 1.5s ease-out forwards;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 1rem;
+
+  &.fade-in {
+    animation: ${fadeIn} 2s ease-out forwards;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
+`;
+
+const Title = styled.div`
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  
+  h1 {
+    display: inline-block;
+    animation: ${letterAnimation} 2s ease forwards;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const Description = styled.div`
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  animation: ${letterAnimation} 2.5s ease forwards;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+`;
